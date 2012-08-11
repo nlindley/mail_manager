@@ -10,5 +10,5 @@
   <%= @alias.destination %>
 </p>
 
-<%= link_to 'Edit', edit_alias_path(@alias) %> |
-<%= link_to 'Back', aliases_path %>
+<%= link_to 'Edit', edit_alias_path(@alias) if can? :update, @alias %> |
+<%= link_to 'Back', aliases_path if can? :index, :aliases %>

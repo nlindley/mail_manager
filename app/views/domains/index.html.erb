@@ -20,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New Domain', new_domain_path %>
+<%= link_to 'New Domain', new_domain_path if can? :create, :domains %>

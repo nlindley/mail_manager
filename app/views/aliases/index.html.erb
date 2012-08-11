@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Virtual alias', new_alias_path %>
+<%= link_to 'New virtual alias', new_alias_path if can? :create, :aliases %>

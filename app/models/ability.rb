@@ -12,7 +12,6 @@ class Ability
 
     if user.try(:admin?)
       can :access, [:users, :aliases], :domain_id => user.domain.id
-      can :read, :domains, :id => user.domain_id
     end
 
     can :access, :all if user.try(:super_admin?)
