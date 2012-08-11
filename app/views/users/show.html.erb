@@ -5,11 +5,5 @@
   <%= @user.username %>
 </p>
 
-<p>
-  <b>Password encrypted:</b>
-  <%= @user.password_encrypted %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) if can? :update, @user %> |
+<%= link_to 'Edit', edit_user_path(@user) if can? :update, @user %>
 <%= link_to 'Back', users_path if can? :index, :users %>
