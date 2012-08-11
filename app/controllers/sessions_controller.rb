@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    redirect_to user_path(current_user) if current_user
-    redirect_to users_path if current_user.try(:admin?)
+    if current_user
+      redirect_to user_path(current_user)
+    elsif current_user.try(:admin?) || current_user.try(:super_admin?)
+      redirect_to users_path
+    end
   end
 
   def create
